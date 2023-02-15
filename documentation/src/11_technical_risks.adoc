@@ -1,0 +1,7 @@
+[[section-technical-risks]]
+== Risks and technical depts 
+
+[#Abbildung_{counter:image-number},title="Risikomatrix"]
+image::{images}/risk_impact_likelyhood.drawio.svg[format=svg,opts=inline]
+
+

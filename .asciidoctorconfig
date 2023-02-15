@@ -1,0 +1,6 @@
+:system: SystemName
+:kibon: SystemName
+:images: ../resources/images
+:templates: ../resources/templates
+:tables: ../resources/tables
+:diagrams: ../resources/diagrams

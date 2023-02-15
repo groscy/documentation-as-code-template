@@ -1,0 +1,71 @@
+[#{scenarioLink},{scenarioTitle}]
+===== #{scenarioId} {scenarioCategory} - {scenarioTitle}
+[options=unbreakable]
+[#Figure{counter:image-number}, title="Quality scenario-{scenarioId}: {scenarioTitle}"]
+[plantuml, format=png, subs=attributes]
+....
+@startuml
+left to right direction
+skinparam actorStyle awesome
+actor "{stimulusSourceShort}" as source
+rectangle "{artifact}" as artifact
+source --> artifact : {stimulusShort}
+artifact --> ({responseMeasureShort}) : {responseShort}
+@enduml
+....
+[#Tabelle_{table-number},title="Qualitätsszenario-{scenarioId}: {scenarioTitle}"]
+[cols="1,1,1,1"]
+|===
+| *Scenario*  
+3+| {scenario}
+| *Quality attribute* 
+3+| {attributeQuality}
+.6+| *Scenario*
+| Stimulus 
+2+| {stimulus} 
+| Stimulus source 
+2+| {stimulusSource} 
+| Environment
+2+| {environment}
+| Artifact 
+2+| {artifact}
+| Response
+2+| {response}
+| Response measure
+2+| {responseMeasure}
+|*Creation date*
+3+|{erstellungsdatum}
+|*Modifikation history*
+3+a|include::src/qualities/{fileName}.adoc[tag=modification]
+|===
+
+<<<
+
+===== Taktiken
+include::../../src/qualities/{fileName}.adoc[tag=tactic]
+
+
+===== Massnahmen
+include::../../src/qualities/{fileName}.adoc[tag=measure]
+
+
+// Clean up unset all attributes for clean state
+
+:!fileName:
+:!scenarioLink:
+:!scenarioId:
+:!scenarioCategory:
+:!scenarioTitle:
+:!scenario:
+:!attributeQuality:
+:!stimulus:
+:!stimulusSource:
+:!environment:
+:!artifact:
+:!response:
+:!responseMeasure:
+:!stimulusSourceShort:
+:!stimulusShort:
+:!responseShort:
+:!responseMeasureShort:
+:!modification:

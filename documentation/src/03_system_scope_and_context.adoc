@@ -1,0 +1,6 @@
+[[section-system-scope-and-context]]
+== System scope
+
+=== Domain context
+
+=== Technical context

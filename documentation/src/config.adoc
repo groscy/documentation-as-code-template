@@ -1,0 +1,21 @@
+// asciidoc settings
+// ==================================
+:author_1: _authorName_
+:revdate: 14.02.2023
+
+:toc-title: Table of Contents
+:figure-caption: Figure
+:table-caption: Table
+
+// enable table-of-contents
+:toc: macro
+
+:images: resources/images
+:templates: ../resources/templates
+:tables: ../resources/tables
+:diagrams: ../resources/diagrams
+
+:system: _systemName_
+
+// Footnotes to be used in the document since AsciiDoc has no simple plugin for reference handling at the time of writing
+:arc42: footnote:[Arc42 Softwarearchitecture Template, Last access: 22.01.2023, https://www.arc42.de/]

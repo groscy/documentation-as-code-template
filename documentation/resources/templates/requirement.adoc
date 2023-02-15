@@ -1,0 +1,32 @@
+[#{link},{title}]
+==== {title}
+
+===== 
+ifdef::condition[]
+{condition} {modalVerb} {system}
+endif::[]
+ifndef::condition[]
+{system} {modalVerb}
+endif::[]
+{actor} 
+ifdef::additions[]
+{additions}
+endif::[]
+{processWord}
+=====
+
+ifdef::description[]
+===== Beschreibung 
+{description}
+endif::[]
+
+// Clean up unset all attributes for clean state
+:link!:
+:title!:
+:description!:
+:condition!:
+:actor!:
+:modalVerb!:
+:additions!:
+:processWord!:
+:id!:

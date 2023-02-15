@@ -1,0 +1,28 @@
+extends: default
+
+font:
+  catalog:
+    merge: true 
+    FiraCode:
+      normal: FiraCode-Regular.ttf
+      italic: FiraCode-Light.ttf
+      bold: FiraCode-Bold.ttf
+      bold_italic: FiraCode-SemiBold.ttf
+    Roboto:
+      normal: Roboto-Regular.ttf
+      italic: Roboto-Italic.ttf
+      bold: Roboto-Bold.ttf
+      bold_italic: Roboto-BoldItalic.ttf
+    NotoEmoji:
+      normal: NotoEmoji-Regular.ttf
+      italic: NotoEmoji-Light.ttf
+      bold: NotoEmoji-SemiBold.ttf
+      bold_italic: NotoEmoji-Bold.ttf
+  fallbacks: [NotoEmoji,Helvetica]
+
+base:
+  font-color: #333
+  font-family: Roboto
+
+code: 
+  font-family: FiraCode

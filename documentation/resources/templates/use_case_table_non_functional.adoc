@@ -1,0 +1,47 @@
+include::../../src/use_cases/{fileName}.adoc[tag=meta]
+
+[#uc{id}, UC-{id}]
+*UC-{id}: {name}*
+
+[#Abbildung_{counter:image-number},title="Use-Case Diagramm UC-{id}: {name}"]
+[plantuml, format=png]
+....
+include::../{diagrams}/use_cases/{fileName}.puml[]
+....
+
+[#Tabelle_{table-number},title="Beschreibung UC-{id}: {name}"]
+[cols="1,2"] 
+|===
+|ID
+|UC-{id}
+|Name
+|{name}
+|Source
+|{source}
+
+ifdef::reference[]
+|Reference|{reference}
+endif::reference[]
+
+|Description 
+a|include::src/requirements/{fileName}.adoc[tag=content]
+|Actors
+|{actors}
+|Trigger
+|{trigger}
+|Precondition
+a|include::src/use_cases/{fileName}.adoc[tag=precondition]
+
+|Main scenario
+a|include::src/use_cases/{fileName}.adoc[tag=main]
+
+ifdef::postconditions[]
+|Postconditions|{postconditions}
+endif::postconditions[]
+
+|Creation date
+|{erstellungsdatum}
+
+|Modification history
+a|include::src/use_cases/{fileName}.adoc[tag=modification]
+|===

@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "ciarant.vscode-structurizr",
+        "tomoki1207.pdf",
+        "asciidoctor.asciidoctor-vscode",
+        "stxr.iconfont-preview",
+        "davidhouchin.whitespace-plus",
+        "jebbs.plantuml",
+        "earshinov.sort-lines-by-selection",
+        "hediet.vscode-drawio"
+    ]
+}

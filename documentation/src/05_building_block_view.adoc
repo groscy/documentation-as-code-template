@@ -1,0 +1,5 @@
+[[section-building-block-view]]
+
+== Building block view 
+
+=== Component view 

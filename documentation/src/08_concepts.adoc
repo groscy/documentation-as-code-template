@@ -1,0 +1,6 @@
+[[section-concepts]]
+== Cross cutting concerns
+
+=== Domain model
+
+=== Domain language

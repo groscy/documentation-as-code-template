@@ -1,0 +1,12 @@
+[[section-introduction-and-goals]]
+
+== Introduction and Goals
+
+=== Vision
+
+<<<
+=== Requirements and Use Cases
+
+:fileName: requirement1
+include::requirements/{fileName}.adoc[tag=meta]
+include::use_cases/{fileName}.adoc[tag=content]

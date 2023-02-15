@@ -1,0 +1,79 @@
+@startmindmap Quality Tree
+top to bottom direction
+
+* Qualities
+**_ 50%
+*** Funktionale Eignung
+****_ 10%
+*****_ Angemessenheit
+****_ 10%
+*****_ Genauigkeit
+****_ **Funktionale Korrektheit**
+**_ 0%
+** Verlässlichkeit
+*****_ Verfügbarkeit
+****_ 10%
+*****_ Fehlertoleranz
+****_ 10%
+*****_ Wiederherstellbarkeit
+**_ 0%
+** Leistungsfähigkeit
+****_ 
+*****_ Zeitverhalten
+****_ 10%
+*****_ Resourcenverwendung
+**_ 20%
+*** Bedienbarkeit (Nutzbarkeit)
+****_ 10%
+*****_ Angemessenheit Erkennbarkeit
+****_ 10%
+*****_ Lernbarkeit
+****_ 10%
+*****_ Benutzerfreundlichkeit
+****_ 10%
+*****_ Helpfulness
+****_ 10%
+*****_ Attraktivität
+****_ **Barrierefreiheit**
+**_ 20%
+*** Sicherheit
+****_ **Vertraulichkeit**
+****_ 10%
+*****_ Integrität
+****_ 10%
+*****_ Nichtablehnung
+****_ 10%
+*****_ Rechenschaftspflicht
+****_ 10%
+*****_ Authentizität
+**_ 0%
+** Kompatibilität
+****_ 5%
+*****_ Austauschbarkeit
+****_ 10%
+*****_ Koexistenz
+****_ 10%
+'*****_ Interoperabilität
+**_ 10%
+*** Wartbarkeit
+****_ 5%
+*****_ Modularität
+****_ 10%
+*****_ Wiederverwendbarkeit
+****_ 10%
+*****_ Analysierbarkeit
+****_ 10%
+****_ **Änderbarkeit**
+****_ 10%
+*****_ Modifikationsstabilität
+****_ 10%
+*****_ Testbarkeit
+**_ 0%
+** Transferierbarkeit
+****_ 5%
+*****_ Portability
+****_ 10%
+*****_ Adaptability
+****_ 10%
+*****_ Installierbarkeit
+@endmindmap

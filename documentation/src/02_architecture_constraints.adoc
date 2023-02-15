@@ -1,0 +1,15 @@
+[[section-architecture-constraints]]
+== Constraints
+
+
+=== Organisation constraints
+
+
+=== Legal constraints
+
+
+=== Client driven constraints  
+
+
+
+

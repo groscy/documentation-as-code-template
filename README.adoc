@@ -1,0 +1,133 @@
+# https://github.com/dvbern/kiBon[kiBon] Software Architecture Documentation
+
+====
+Scripts inside `/scripts` are meant to be run from `/documentation`
+====
+
+## Prerequisites
+
+Install https://rubyinstaller.org/downloads/[Ruby] Gems:
+
+* https://docs.asciidoctor.org/asciidoctor/latest/install/[Asciidoctor]
+* https://docs.asciidoctor.org/diagram-extension/latest/[Asciidoctor-Diagrams]
+* https://docs.asciidoctor.org/pdf-converter/latest/install/[Asciidoctor-PDF]
+* https://github.com/Alwinator/asciidoctor-lists[Asciidoctor-Lists]
+
+To install required gems use the `bundle` command
+
+* Download the https://static.structurizr.com/download/structurizr-cli.zip[structurizr-cli], unzip and move it into `./bin/structurizr-cli`
+```shell
+curl --show-error --location https://static.structurizr.com/download/structurizr-cli.zip | tar -xf - -C bin/structurizr-cli
+```
+
+## Build  
+
+* Generate the diagrams from the structurizr workspace model
+
+[source,batch]
+----
+#!/bin/sh
+
+./bin/structurizr-cli/structurizr.sh \
+ export -w documentation/src/domain/kibon.dsl \
+  -format plantuml/structurizr \
+  -output documentation/out/meta/diagrams
+----
+
+## Generate the software architecture documentation representations
+
+
+**Generate the documentation as HTML representation**
+
+[source,batch]
+----
+#!/bin/sh
+
+asciidoctor -b html5 \
+ -r asciidoctor-diagram \
+ -r asciidoctor-pdf \
+ -a pdf-theme=basic \
+ -a pdf-themesdir=documentation/resources/themes \
+ -a pdf-fontsdir=documentation/resources/fonts \
+ -D documentation/out \
+ documentation/kibon-system.adoc
+----
+
+**Generate the documentation as PDF representation**
+
+[source,batch]
+----
+#!/bin/sh
+
+asciidoctor -b pdf \
+ -r asciidoctor-diagram \
+ -r asciidoctor-pdf \
+ -a pdf-theme=basic \
+ -a pdf-themesdir=documentation/resources/themes \
+ -a pdf-fontsdir=documentation/resources/fonts \
+ -D documentation/out \
+ documentation/kibon-system.adoc
+----
+
+## Create new requirement
+
+. Create a new numbered requirement under `documentation/src/requirements` 
+. Use the following attributes to convey the necessary info about the requirement
++
+*Parameters*
++ 
+|===
+|Name|Description|Required?
+|`:link:`|Used to define the chapter link for xrefs|	
+ &#10003;
+|`:title:`|The requirement title used additionally for the link text of any xrefs to this requirement | &#10003;
+|`:description:`|A short description of the requirement, needs to be in a format that can be included using the `include:...[]` syntax | &#10003;
+|`:diagram:`|File path to any potential diagram, needs to be in a format that can be included using the `include:...[]` syntax | &#10060;
+|`:diagramTitle:`|The title of the diagram|(&#10003;) only needed if `:diagram:` is defined
+|`:table:`|File path to any potential table, needs to be in a format that can be included using the `include:...[]` syntax | &#10060;
+|`:tableTitle:`|The title of the table|(&#10003;) only needed if `:table:` is defined
+|===
+. To include the requirement in the document use
+[source,asciidoc]
+\include::requirements/<newRequirement>.adoc[]
+\include::{templates}/requirement.adoc[]
+
+## Create new quality scenario
+
+. Create a new numbered quality scenario under `documentation/src/qualities` 
+. Use the following attributes to convey the necessary info about the quality scenario
++
+*Parameters*
++ 
+|===
+|Name|Description|Required?
+|`:title:`|The requirement title used additionally for the link text of any xrefs to this requirement | &#10003;
+|`:scenarioId:`|The id of the scenario it is used to create a xref with `quality<scenarioId>`  | &#10003;
+|`:scenarioTitle:`|The title of the scenario | &#10003;
+|`:scenario:`|The description of the scenario| &#10003;
+|`:attributeQuality:`|The quality attribute of this scenario | &#10003;
+|`:attributeConcern:`|The concerns of the attribute|&#10003;
+|`:stimulus:`|The stimulus triggering the scenario|&#10003;
+|`:stimulusSource:`|The actor triggering the stimulus|&#10003;
+|`:environment:`|The conditions needed for the scenario|&#10003;
+|`:artifact:`|The system artifact affected by the scenario|&#10003;
+|`:response:`|The response/output of the system to the scenario|&#10003;
+|`:responseMeasure:`|The measurment of system response to the given scenario|&#10003;
+|===
+. To include the requirement in the document use
+
+[source,asciidoc]
+\include::qualities/<newQualityScenario>.adoc[]
+\include::{templates}/qualityScenario.adoc[]
+
+## References
+
+* https://github.com/structurizr/dsl/blob/master/docs/language-reference.md#enterprise[Structurizr DSL Language Reference]
+* https://arc42.org/[arc42] to get the structure for the software architecture documentation
+* https://c4model.com/[C4 Model] an "abstraction-first" approach to diagramming software architecture, based upon abstractions that reflect how software architects and developers think about and build software.
+* https://structurizr.com/dsl[Structurizr DSL] to describe the https://c4model.com/[C4 Model] of the software system
+* https://github.com/structurizr/cli[Structurizr CLI] a command line utility for Structurizr to export the https://plantuml.com/[PlantUML] diagrams from the C4 Model described in the Structurizr DSL
+* https://asciidoc.org/[AsciiDoc] as format to write the software architecture documentation
+* https://docs.asciidoctor.org/asciidoctor[Asciidoctor] to generate the representations of the software architecture documentation written in asciidoc 
+
+---

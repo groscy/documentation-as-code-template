@@ -1,0 +1,61 @@
+{
+	"folders": [
+		{
+			"path": "../"
+		}
+	],
+	"settings": {
+		"asciidoc.use_asciidoctorpdf": true,
+		"asciidoc.use_kroki": true,
+		"asciidoc.useWorkspaceRoot": false,
+		"asciidoc.trace": "verbose",
+    	"asciidoc.preview.breaks": true,
+    	"asciidoc.preview.attributes": {
+			"system": "kiBon",
+			"kibon": "kiBon",
+			"dvb": "DV-Bern",
+        	"images": "../resources/images",
+        	"templates": "../resources/templates",
+        	"tables": "../resources/tables",
+        	"diagrams": "../resources/diagrams"
+		},
+		"cSpell.enabled": true,
+		"cSpell.words": [
+			"Architekturenscheidungen",
+			"ausschliesslich",
+			"Ausserrhoden",
+			"Autorisierungsinformation",
+			"crossmark",
+			"Deeplinks",
+			"deployen",
+			"Erziehungsberechtige",
+			"Fedlet",
+			"FKJV",
+			"Gesuchsprozess",
+			"Komponentendiagramm",
+			"Komponentendiagramme",
+			"Konzeptionierung",
+			"Kundengetriebene",
+			"nachdokumentieren",
+			"neugeladen",
+			"paketiert",
+			"personenspezifische",
+			"Registrierungsprozess",
+			"Selbständigkeitserklärung",
+			"Sequenzdiagramm",
+			"Sequenzdiagramme",
+			"Sequenzdiagrammen",
+			"Servlet",
+			"Statemanagement",
+			"structurizr",
+			"Structurizr",
+			"technologieagnostisch",
+			"technologieagnostischen",
+			"technologieunabhängig",
+			"Umsysteme",
+			"Umsystemen",
+			"Versionierungsstrategie",
+			"VSEG"
+		]
+	},
+}

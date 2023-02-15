@@ -1,0 +1,14 @@
+[#{link},{title}]
+==== {title}
+
+ifdef::description[]
+===== Description 
+|===
+|{description}
+|===
+endif::[]
+
+// Clean up unset all attributes for clean state
+:link!:
+:title!:
+:description!:
