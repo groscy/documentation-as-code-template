@@ -51,7 +51,7 @@ jobs:
           unzip documentation/bin/structurizr-cli.zip -d documentation/bin/structurizr-cli
           rm -f documentation/bin/structurizr-cli.zip
       - name: Export Diagrams with Structurizr-CLI
-        run: bash ./documentation/bin/structurizr-cli/structurizr.sh export -workspace documentation/src/domain/kibon.dsl -format plantuml -output documentation/resources/diagrams
+        run: bash ./documentation/bin/structurizr-cli/structurizr.sh export -workspace documentation/src/domain/domain.dsl -format plantuml -output documentation/resources/diagrams
       - name: persist-workspace
         uses: bissolli/gh-action-persist-workspace@v1
         with:
@@ -66,7 +66,7 @@ jobs:
       - name: Generate PDF
         uses: tonynv/asciidoctor-action@v2
         with:
-          program: gem install asciidoctor-lists && asciidoctor -b pdf -v -r asciidoctor-diagram -r asciidoctor-pdf -r asciidoctor-lists -a pdf-theme=basic -a pdf-themesdir=documentation/resources/themes -a pdf-fontsdir=documentation/resources/fonts -D documentation/out/pdf documentation/kibon-system.adoc
+          program: gem install asciidoctor-lists && asciidoctor -b pdf -v -r asciidoctor-diagram -r asciidoctor-pdf -r asciidoctor-lists -a pdf-theme=basic -a pdf-themesdir=documentation/resources/themes -a pdf-fontsdir=documentation/resources/fonts -D documentation/out/pdf documentation/index.adoc
       - name: persist-workspace
         uses: bissolli/gh-action-persist-workspace@v1
         with:
@@ -99,8 +99,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./documentation/out/pdf/kibon-system.pdf
-          asset_name: kiBon-Architecture-Documentation.pdf
+          asset_path: ./documentation/out/pdf/sad.pdf
+          asset_name: Architecture-Documentation.pdf
           asset_content_type: application/pdf
   clear-workspace:
     needs: [release-artifacts]
